@@ -3,6 +3,8 @@ Read An IAmA
 
 An IAmA on reddit with a person tends to be structured like an interview with questions and answers. One good example are the recent celebrity IAmA's. I don't think that the reddit comment system is always the best medium to read these in, so I made this!
 
+It fetches the questions and answers and formats into a HTML file (using bootstrap for css). 
+
 Usage
 ----
 
@@ -120,10 +122,10 @@ Notes:
 
 Type prefixes
 
-   t1_  Comment
-   t2_  Account
-   t3_  Link
-   t4_  Message
-   t5_  Subreddit
-   t6_  Award
-   t8_  PromoCampaign
+    t1_  Comment
+    t2_  Account
+    t3_  Link
+    t4_  Message
+    t5_  Subreddit
+    t6_  Award
+    t8_  PromoCampaign
