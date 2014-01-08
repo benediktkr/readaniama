@@ -93,11 +93,13 @@ Comments
     u't1'    # Comment
 
 This works much the same as the selfpost. Too see avilable data:
+
      >>> top_comment = comments[0]['data']
      >>> top_comment.keys()
      ...
 
 Some examples of Interesting data:
+
      >>> top_comment['ups'] - top_comment['downs']
      1298
      >>> top_comment['author']
@@ -110,6 +112,7 @@ Some examples of Interesting data:
      u't3_1ujvrg'
 
 Then find it's child comments:
+
      >>> len(top_comment['replies']['data']['children'])
      1
      >>> jerry_replies = top_comment['replies']['data']['children'][0]['data']
