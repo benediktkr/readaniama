@@ -2,6 +2,8 @@ import requests
 import pprint
 import sys
 
+import django.utils.encoding
+
 from html import *
 
 def get_replies(comment):
@@ -16,7 +18,7 @@ def iama(thread):
     children = json[1]['data']['children']
     comments = [a['data'] for a in children if a['kind']=="t1"]
 
-    print_html_header(selfpost['title'])
+    print_html_header(selfpost['title'].encode("utf-8"))
 
     print_selfpost_text(selfpost['selftext'].encode("utf-8"))
 
@@ -40,13 +42,13 @@ def search(comment, op, level=0):
     if comment['author'] == op:
         printed_something = True
         if level == 0:
-            print_announcement(comment['body'])
+            print_announcement(comment['body'].encode("utf-8"))
         else:
-            print_answer_start(comment['body'])
+            print_answer_start(comment['body'].encode("utf-8"))
         
     elif op_next:
         printed_something = True
-        print_question_start(comment['author'], comment['body'])
+        print_question_start(comment['author'].encode("utf8"), comment['body'].encode("utf-8"))
 
     for subcomment in replies:
         search(subcomment, op, level+1)
